@@ -1,16 +1,19 @@
 var keys = '<p id="keys">Answer</p>';
-$("#content").append(keys);
+$('#content').append(keys);
 
 var remoteaddr =
-  "https://us-central1-airesponse-1308f.cloudfunctions.net/addMessage";
+  'https://us-central1-airesponse-1308f.cloudfunctions.net/addMessage';
 
-$("#clickcheck").blur(function() {
+$('#clickcheck').click(function () {
   // get the file and append the data
-  var requestData = "message=" + $("#mesg").val();
+  var requestData = 'message=' + $('#mesg').val();
+  console.log('Message is ' + requestData);
 
   $.get(remoteaddr, requestData)
-    .done(function() {})
-    .fail(function() {
-      alert("get request failed"); //data will still be saved
+    .done(function (data) {
+      console.log(data);
+    })
+    .fail(function () {
+      alert('get request failed'); //data will still be saved
     });
 });

@@ -4,7 +4,7 @@ function loadRates() {
   $.getJSON("data/rates.json")
     .done(function(data) {
       // data
-      console.log("here");
+      console.log("here - done with the data");
 
       var msg = "<h2>Exchange Rates</h2>";
       // Start message
